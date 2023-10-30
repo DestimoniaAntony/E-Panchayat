@@ -1,0 +1,61 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-primary mb-4">Citizen's Data View</h1>
+         <h1 class="text-white display-3 mb-5">Online Services</h1> 
+        <div class="mx-auto" style="width: 100%; max-width: 600px;">
+            {% comment %} <div class="input-group">
+                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
+                <div class="input-group-append">
+                    <button class="btn btn-primary px-3">Track & Trace</button>
+                </div>
+            </div>{% endcomment %} 
+        </div> 
+    </div>
+</div>
+<!-- Header End -->
+
+<div class="container-fluid py-5">
+    <div class="table-responsive text-nowrap">
+        <table class="table table-dark table-hover">
+            
+          <thead>
+            <tr>
+                <th>Citizen ID</th> 
+                <th>Name</th> 
+                <th>Mobile</th>
+                <th>Mail ID</th>
+                <th>Address</th>
+                <th>Panchayat</th>
+                <th>Ward</th>
+       
+            </tr>
+          </thead>
+        <tbody class="table-border-bottom-0">
+            {% for i in citizen %}
+            <tr>
+
+                <td>{{ i.user_id }}</td>
+                <td>{{ i.user.first_name }}</td>
+                <td>{{ i.mobile }}</td>
+                <td>{{ i.user.email}}</td>
+                <td>{{ i.address_line1}}</td>
+                <td>{{ i.panchayat }}</td> 
+                <td>{{ i.ward }}</td>
+                {% comment %} <td><a href="addtocart?id={{i.user_id}}" class="btn btn-success">Add</a></td>                        {% endcomment %}
+            </tr>
+
+
+            {% endfor %}
+
+
+
+        </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

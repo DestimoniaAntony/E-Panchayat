@@ -1,0 +1,101 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-primary mb-4">Farmer Products Page</h1>
+        <h1 class="text-white display-3 mb-5">Gallery</h1>
+        <div class="mx-auto" style="width: 100%; max-width: 600px;">
+            {% comment %} <div class="input-group">
+                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
+                <div class="input-group-append">
+                    <button class="btn btn-primary px-3">Track & Trace</button>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <h6 class="text-primary text-uppercase font-weight-bold">Products</h6>
+            <h1 class="mb-4">Organic Products
+                                Buy Online</h1>
+        </div>
+        {% for i in view_pp %}
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <img class="card-img-top" style="max-width: 200px;max-height:140px;" src="/media/{{ i.image }}" alt="">                   
+                    <div class="card-body text-center p-0">
+                        <div class="team-text">
+                            <h1 class="font-weight-bold"> {{ i.name }}</h1>
+                            <span>₹{{ i.price }}/kg</span>
+                        </div>
+                        <h5>{{ i.desc}}</h5>
+                        <a href="cart?id={{i.id}}" class="cart-btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% comment %} <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="{% static 'img/team-2.jpg' %}" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Full Name</h5>
+                            <span>Designation</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+            {% comment %} <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="{% static 'img/team-3.jpg' %}" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Full Name</h5>
+                            <span>Designation</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+            {% comment %} <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-5">
+                    <img class="card-img-top" src="{% static 'img/team-4.jpg' %}" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                            <h5 class="font-weight-bold">Full Name</h5>
+                            <span>Designation</span>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
